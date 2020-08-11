@@ -1,0 +1,72 @@
+html {
+    /* rem (relative-to-root-element em) is better than absolute units.
+       most browsers have 16px root element, so if we want 10px as root,
+       set the default scaling to 62.5%
+    */
+    font-size: 75%;
+    box-sizing: border-box; 
+    /* overflow: hidden; 
+    width: 100%;
+    height: 100vh;*/
+}
+body {
+    font: 1.2rem Arial;
+    margin: 0;
+    /*padding: 0;*/
+    height: 100vh;
+    /* height: 100%; */
+}
+/* try making a big container for everything: 
+.screen-container {
+  display:block;
+  height: 100vh;
+    margin: 0;
+    padding: 0;
+} */
+
+/* define a new class by starting it with a dot */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    /* our grid has 1 column-fragment and the above 3 row fragments: */
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 3rem;
+    height: 100%;
+}
+/* create classes for each grid template area */
+.header {
+    grid-area: header;
+    background-color: #203040;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* vertical align */
+    padding: 0.5rem;
+}
+.main {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
+    background-color: #203040;
+    color: #ffffff;
+    display: flex;
+    justify-content: center; /* horizontal align */
+    align-items: center; /* vertical align */
+}
+.brand a {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none; /* don't underline the link */
+}
+.header-links a {
+    color: #ffffff;
+    text-decoration: none; /* don't underline the link */
+}
+.header-links a:hover {
+    color: #ff8000;
+}
